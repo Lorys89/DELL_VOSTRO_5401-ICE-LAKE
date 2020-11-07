@@ -21,15 +21,9 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 
 ![infobigsur](./Screenshot/infomacbigsur.png)
 
-### Special Config:
-
-- Usb port mapping performed
-- Applied cosmetics PCI-DEV
-
 ## Credits
 
 - [Apple](https://apple.com) for macOS;
 - [Acidanthera](https://github.com/acidanthera) for OpenCore and all the lovely hackintosh work.
 - [Dortania](https://github.com/dortania)
 
-# If you need help please contact us on [Telegram](https://t.me/HackintoshLife_it) or [Web](https://www.hackintoshlife.it/)
