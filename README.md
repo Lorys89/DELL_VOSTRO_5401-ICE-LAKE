@@ -21,6 +21,41 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 
 ![infobigsur](./Screenshot/infomacbigsur.png)
 
+## Peripherals
+
+![infohack](./Screenshot/periferiche.png)
+![infodp2](./Screenshot/pci-list.png)
+![usbmap](./Screenshot/usb-map.png)
+![infopci](./Screenshot/pci-dev.png)
+
+### What works and What doesn't or WIP:
+
+- [x] Intel Iris Plus iGPU eDP Output (with Backlight)
+- [ ] Intel Iris Plus iGPU HDMI Output
+- [ ] Intel Iris Plus iGPU Type-C to HDMI Output
+- [x] ALC236 Internal Speakers
+- [x] ALC236 Native Combojack headphones
+- [ ] ALC236 HDMI Audio Output
+- [x] All USB Ports + SD reader
+- [x] SpeedStep / Sleep / Wake (Partial work)
+- [x] I2C Touchpad with gesture (Partial work)
+- [x] Brightness Key
+- [x] Wi-Fi and Bluetooth BCM943602BAED (DW1830) Module
+- [x] Realtek RTL8168 LAN
+- [x] USB Cardreader
+- [x] ACPI Battery
+- [x] NVRAM
+- [x] Windows boot from OpenCore
+- [ ] ALC236 Combojack microphone
+
+### Special Config:
+
+- Usb port mapping performed
+- SSDT-Hack Essential patch
+- Applied cosmetics PCI Dev
+
+See [ioreg](./ioreg%20MacBook%20Pro%2016%2C2.ioreg) for more clarification
+
 ## Credits
 
 - [Apple](https://apple.com) for macOS;
