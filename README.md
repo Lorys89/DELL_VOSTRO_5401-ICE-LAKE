@@ -14,8 +14,8 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 | Audio            | Realtek ALC236                     |
 | Ram              | 8 Gb DDR4 3200 Mhz                 |
 | Wifi + Bluetooth | BCM943602BAED                      |
-| NVMe             | HYNIX BC511 512 GB                 |
-| NVME             | SAMSUNG 970 EVO PLUS 500 GB        |
+| NVMe             | HYNIX BC511 512 GB (WINDOWS)       |
+| NVME             | SAMSUNG 970 EVO PLUS 500 GB (MACOS)|
 | SmBios           | MacBookPro 16,2                    |
 | BootLoader       | OpenCore                           |
 
