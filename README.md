@@ -58,7 +58,7 @@ See [ioreg](./ioreg%20MacBook%20Pro%2016%2C2.ioreg) for more clarification
 
 ## Credits
 
-- [Apple](https://apple.com) for macOS;
+- [Apple](https://apple.com) for macOS.
 - [Acidanthera](https://github.com/acidanthera) for OpenCore and all the lovely hackintosh work.
-- [Dortania](https://github.com/dortania)
+- [Dortania](https://github.com/dortania) For great and detailed guides.
 
