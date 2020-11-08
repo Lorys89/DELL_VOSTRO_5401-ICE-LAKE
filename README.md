@@ -8,7 +8,7 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 
 | Component        | Brank                              |
 | ---------------- | ---------------------------------- |
-| CPU              | Intel i7 1065G7                    |
+| CPU              | Intel i7 1065g7 (4C-8T 8MB ICL)    |
 | iGPU             | Intel® Iris Plus Graphics          |
 | Lan              | Realtek 8168                       |
 | Audio            | Realtek ALC236                     |
