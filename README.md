@@ -39,8 +39,8 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 - [x] Brightness Key
 - [x] Wi-Fi and Bluetooth BCM943602BAED (DW1830) Module
 - [x] Realtek RTL8168 LAN
-- [x] NVME Slot-1 PciE Gen3x4
-- [x] NVME Slot-2 PciE Gen3x4 
+- [x] SSD NVME Slot-1 PciE Gen3x4
+- [x] SSD NVME Slot-2 PciE Gen3x4 
 - [x] Micro SD Cardreader (USB-Internal)
 - [x] WebCam (USB-Internal)
 - [x] ACPI Battery
