@@ -93,16 +93,6 @@
 				<string>VGA compatible controller</string>
 				<key>enable-cdclk-frequency-fix</key>
 				<data>AQAAAA==</data>
-				<key>enable-cfl-backlight-fix</key>
-				<data>AQAAAA==</data>
-				<key>enable-dvmt-calc-fix</key>
-				<data>AQAAAA==</data>
-				<key>framebuffer-fbmem</key>
-				<data>AACQAA==</data>
-				<key>framebuffer-patch-enable</key>
-				<data>AQAAAA==</data>
-				<key>framebuffer-stolenmem</key>
-				<data>AAAwAQ==</data>
 				<key>hda-gfx</key>
 				<string>onboard-1</string>
 				<key>model</key>
@@ -117,7 +107,7 @@
 				<key>hda-gfx</key>
 				<string>onboard-1</string>
 				<key>layout-id</key>
-				<integer>13</integer>
+				<integer>15</integer>
 				<key>model</key>
 				<string>Realtek High Definition Audio Controller</string>
 			</dict>
@@ -150,6 +140,10 @@
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x15,0x1)</key>
 			<dict>
+				<key>#force-polling</key>
+				<data>AQAAAA==</data>
+				<key>#gpio-alt</key>
+				<data>AQAAAA==</data>
 				<key>AAPL,slot-name</key>
 				<string>Built In</string>
 				<key>device_type</key>
@@ -248,21 +242,6 @@
 				<string>Signal processing controller</string>
 				<key>model</key>
 				<string>Intel Corporation, Series Chipset Thermal Controller</string>
-			</dict>
-			<key>#PciRoot(0x0)/Pci(0x2,0x0)</key>
-			<dict>
-				<key>AAPL,GfxYTile</key>
-				<data>AQAAAA==</data>
-				<key>AAPL,ig-platform-id</key>
-				<data>AABSig==</data>
-				<key>AAPL,slot-name</key>
-				<string>Internal@0,2,0</string>
-				<key>device_type</key>
-				<string>VGA compatible controller</string>
-				<key>hda-gfx</key>
-				<string>onboard-1</string>
-				<key>model</key>
-				<string>Intel Iris Plus Graphics G7</string>
 			</dict>
 		</dict>
 		<key>Delete</key>
@@ -636,13 +615,13 @@
 				<key>Arch</key>
 				<string>Any</string>
 				<key>BundlePath</key>
-				<string>AppleBacklightSmoother.kext</string>
+				<string>CodecCommander.kext</string>
 				<key>Comment</key>
 				<string></string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
-				<string>Contents/MacOS/AppleBacklightSmoother</string>
+				<string>Contents/MacOS/CodecCommander</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
@@ -717,7 +696,7 @@
 			<key>AppleXcpmForceBoost</key>
 			<false/>
 			<key>CustomSMBIOSGuid</key>
-			<false/>
+			<true/>
 			<key>DisableIoMapper</key>
 			<true/>
 			<key>DisableLinkeditJettison</key>
@@ -746,9 +725,9 @@
 		<key>Scheme</key>
 		<dict>
 			<key>FuzzyMatch</key>
-			<true/>
+			<false/>
 			<key>KernelArch</key>
-			<string>x86_64</string>
+			<string>Auto</string>
 			<key>KernelCache</key>
 			<string>Auto</string>
 		</dict>
@@ -856,7 +835,7 @@
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 				<key>boot-args</key>
-				<string>brcmfx-country=#a ps2rst=0 -v</string>
+				<string>-v brcmfx-country=#a</string>
 				<key>csr-active-config</key>
 				<data>AAAAAA==</data>
 				<key>prev-lang:kbd</key>
@@ -948,7 +927,7 @@
 		<key>UpdateSMBIOS</key>
 		<true/>
 		<key>UpdateSMBIOSMode</key>
-		<string>Create</string>
+		<string>Custom</string>
 	</dict>
 	<key>UEFI</key>
 	<dict>
