@@ -21,13 +21,6 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 
 ![infobigsur](./Screenshot/infomacbigsur.png)
 
-## Peripherals
-
-![infohack](./Screenshot/periferiche.png)
-![infodp2](./Screenshot/pci-list.png)
-![usbmap](./Screenshot/usb-map.png)
-![infopci](./Screenshot/pci-dev.png)
-
 ### What works and What doesn't or WIP:
 
 - [x] Intel Iris Plus iGPU eDP Output (with Backlight)
@@ -53,6 +46,13 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 - [x] ACPI Battery
 - [x] NVRAM (Native)
 - [x] Windows 10 boot from OpenCore
+
+## Peripherals
+
+![infohack](./Screenshot/periferiche.png)
+![infodp2](./Screenshot/pci-list.png)
+![usbmap](./Screenshot/usb-map.png)
+![infopci](./Screenshot/pci-dev.png)
 
 ### Special Config:
 
