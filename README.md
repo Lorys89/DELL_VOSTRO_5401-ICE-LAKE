@@ -34,7 +34,7 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 - [ ] Intel Iris Plus iGPU HDMI Output
 - [ ] Intel Iris Plus iGPU Type-C to HDMI Output
 - [x] ALC236 Internal Speakers
-- [ ] ALC236 Internal microphone
+- [x] ALC236 Internal microphone
 - [x] ALC236 Native Combojack headphones
 - [ ] ALC236 Combojack microphone
 - [ ] ALC236 HDMI Audio Output
@@ -42,14 +42,17 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 - [x] All USB Ports
 - [x] SpeedStep / Sleep / Wake (Partial work)
 - [x] I2C Touchpad with gesture (Partial work)
+- [x] Keyboard (PS2-Internal) with backlight
 - [x] Brightness Key
 - [x] Wi-Fi and Bluetooth BCM943602BAED (DW1830) Module
 - [x] Realtek RTL8168 LAN
+- [x] NVME Slot-1 PciE Gen3x4
+- [x] NVME Slot-2 PciE Gen3x4 
 - [x] Micro SD Cardreader (USB-Internal)
 - [x] WebCam (USB-Internal)
 - [x] ACPI Battery
-- [x] NVRAM
-- [x] Windows boot from OpenCore
+- [x] NVRAM (Native)
+- [x] Windows 10 boot from OpenCore
 
 ### Special Config:
 
