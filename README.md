@@ -35,6 +35,7 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 - [ ] Intel Iris Plus iGPU Type-C to HDMI Output
 - [x] ALC236 Internal Speakers
 - [x] ALC236 Native Combojack headphones
+- [ ] ALC236 Combojack microphone
 - [ ] ALC236 HDMI Audio Output
 - [ ] ALC236 TYPE-C to HDMI Audio Output
 - [x] All USB Ports
@@ -47,7 +48,6 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 - [x] ACPI Battery
 - [x] NVRAM
 - [x] Windows boot from OpenCore
-- [ ] ALC236 Combojack microphone
 
 ### Special Config:
 
