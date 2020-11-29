@@ -34,6 +34,7 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 - [ ] ALC236 TYPE-C to HDMI Audio Output
 - [x] All USB-A 3.1 Ports (TYPE-C 3.2 Included)
 - [x] SpeedStep / Sleep / Wake
+- [x] HID Key PWRB & SLPB 
 - [x] I2C Touchpad with gesture (Partial work)
 - [x] Keyboard (PS2-Internal) with backlight
 - [x] Brightness Key
@@ -51,7 +52,6 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 
 ![infohack](./Screenshot/periferiche.png)
 ![infodp2](./Screenshot/pci-list.png)
-![usbmap](./Screenshot/usb-map.png)
 ![infopci](./Screenshot/pci-dev.png)
 
 ### Special Config:
