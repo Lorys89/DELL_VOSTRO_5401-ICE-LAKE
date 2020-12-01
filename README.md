@@ -24,14 +24,14 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 ### What works and What doesn't or WIP:
 
 - [x] Intel Iris Plus iGPU eDP with Backlight Output
-- [ ] Intel Iris Plus iGPU HDMI Output
-- [ ] Intel Iris Plus iGPU Type-C to HDMI Output
+- [ ] Intel Iris Plus iGPU HDMI Output (Not supported at the moment)
+- [ ] Intel Iris Plus iGPU Type-C to HDMI Output (Not supported at the moment)
 - [x] ALC236 Internal Speakers
 - [x] ALC236 Internal microphone
 - [x] ALC236 Combojack headphones
 - [ ] ALC236 Combojack microphone
-- [ ] ALC236 HDMI Audio Output
-- [ ] ALC236 TYPE-C to HDMI Audio Output
+- [ ] ALC236 HDMI Audio Output (Not supported at the moment)
+- [ ] ALC236 TYPE-C to HDMI Audio Output (Not supported at the moment)
 - [x] All USB-A 3.1 Ports (TYPE-C 3.2 Included)
 - [x] SpeedStep / Sleep / Wake
 - [x] HID Key PWRB & SLPB 
