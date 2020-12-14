@@ -12,7 +12,7 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 | iGPU             | Intel® Iris Plus Graphics          |
 | Lan              | Realtek 8168                       |
 | Audio            | Realtek ALC236                     |
-| Ram              | 32 Gb DDR4 3200 Mhz                 |
+| Ram              | 32 Gb DDR4 3200 Mhz                |
 | Wifi + Bluetooth | BCM943602BAED (DW1830)             |
 | NVMe             | HYNIX BC511 512 GB (WINDOWS)       |
 | NVME             | SAMSUNG 970 EVO PLUS 500 GB (MACOS)|
@@ -46,6 +46,7 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 - [x] SSD NVME Slot-2 PciE Gen3x4 
 - [x] Micro SD Cardreader (USB-Internal)
 - [x] WebCam (USB-Internal)
+- [x] All Sensors CPU, IGPU, BATTERY, NVME, FAN
 - [x] ACPI Battery
 - [x] NVRAM (Native)
 - [x] Recovery (macOS) boot from OpenCore
