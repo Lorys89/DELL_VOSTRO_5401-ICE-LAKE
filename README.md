@@ -37,7 +37,9 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 - [x] HID Key PWRB & SLPB 
 - [x] I2C Touchpad with gesture (Partial work)
 - [x] Keyboard (PS2-Internal) with backlight
-- [x] Brightness Key
+- [x] F6 & F7 Brightness Key
+- [x] F10 Print Screen Key
+- [x] F1 & F2 & F3 Sound Key
 - [x] Wi-Fi and Bluetooth BCM943602BAED (DW1830) Module
 - [x] Realtek RTL8168 LAN
 - [x] SSD NVME Slot-1 PciE Gen3x4
@@ -46,6 +48,7 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 - [x] WebCam (USB-Internal)
 - [x] ACPI Battery
 - [x] NVRAM (Native)
+- [x] Recovery (macOS) boot from OpenCore
 - [x] Windows 10 boot from OpenCore
 
 ## Peripherals
