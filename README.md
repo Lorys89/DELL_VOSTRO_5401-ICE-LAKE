@@ -19,7 +19,7 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 | SmBios           | MacBookPro 16,2                    |
 | BootLoader       | OpenCore                           |
 
-![infobigsur](./Screenshot/infomacbigsur.png)
+![infobigsur](./Screenshot/infomac.png)
 
 ### What works and What doesn't or WIP:
 
