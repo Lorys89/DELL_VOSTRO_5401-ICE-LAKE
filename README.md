@@ -52,12 +52,16 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 - [x] Recovery (macOS) boot from OpenCore
 - [x] Windows 10 boot from OpenCore
 
-## Peripherals
+## Peripherals & Benchmarks
 
 ![infohack](./Screenshot/periferiche.png)
 ![infodp2](./Screenshot/pci-list.png)
 ![infopci](./Screenshot/pci-dev.png)
+![Temp-Fan-Control](./Screenshot/Temp-Fan-Control.png)
 ![speedtest](./Screenshot/speedtest.png)
+![CPU](./Screenshot/CPU.png)
+![openCL](./Screenshot/openCL.png)
+![metal](./Screenshot/metal.png)
 ![Bench-Ram-Nvme](./Screenshot/Bench-Ram-Nvme.png)
 
 
