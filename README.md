@@ -77,14 +77,19 @@ See [ioreg](./ioreg%20MacBook%20Pro%2016%2C2.ioreg) for more clarification
 ### Enable :
 * SATA Operation : AHCI
 * Fastboot : Thorough
+* Integrated NIC : Enable
+
 
 ### Disable : 
 * Secure Boot
+* Absolute
 * TPM2.0 Security On
 * Intel SGX
+* SMM Security Migration
 * Wake on AC
 * Wake on Dell USB-C Dock
-* Power On Lid Open 
+* Power On Lid Open
+* Enable UEFI Network Stack
 * Sign Of Life : Early Logo Display / Early keyboard backlight
 * VT for Direct I/O
 * cfg lock : DO AT YOUR OWN RISK!!! It may brick your laptop.
