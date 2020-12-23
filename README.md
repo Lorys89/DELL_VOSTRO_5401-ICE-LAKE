@@ -76,7 +76,6 @@ See [ioreg](./ioreg%20MacBook%20Pro%2016%2C2.ioreg) for more clarification
 ## Bios settings
 ### Enable :
 * SATA Operation : AHCI
-* Enable MediaCard : check Enable SD Card (Do not check SD card Boot, it will cause SD card kext fail to load.)
 * Fastboot : Thorough
 
 ### Disable : 
@@ -88,7 +87,6 @@ See [ioreg](./ioreg%20MacBook%20Pro%2016%2C2.ioreg) for more clarification
 * Power On Lid Open 
 * Sign Of Life : Early Logo Display / Early keyboard backlight
 * VT for Direct I/O
-* Fingerprint reader
 * cfg lock : DO AT YOUR OWN RISK!!! It may brick your laptop.
 
 
