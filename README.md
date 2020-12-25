@@ -92,11 +92,10 @@ See [ioreg](./ioreg%20MacBook%20Pro%2016%2C2.ioreg) for more clarification
 * Enable UEFI Network Stack
 * Sign Of Life : Early Logo Display / Early keyboard backlight
 * VT for Direct I/O
-* cfg lock : DO AT YOUR OWN RISK!!! It may brick your laptop.
- `CFG Lock` to `0x0` using `setup_var 0x43 0x00`
- 
- ![CFG-Lock](./Screenshot/CFG-Lock.png)
+* cfg lock and DVMT: DO AT YOUR OWN RISK!!! It may brick your laptop.
 
+ ![CFG-Lock](./Screenshot/CFG-Lock.png)
+ ![DVMT](./Screenshot/DVMT.png)
 
 
 ## Credits
