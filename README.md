@@ -100,11 +100,13 @@ See [ioreg](./ioreg%20MacBook%20Pro%2016%2C2.ioreg) for more clarification
 Create a usb in FAT with MBR map and put [ru.efi](https://github.com/Lorys89/DELL_VOSTRO_5401-ICE-LAKE/raw/main/TOOLS%20EFI%20MOD/RU.efi) in it 
 then go to the bios, and create an entry with the path of the usb and setting the ru.efi file and the name of 
 your choice startup and then send and finally click apply.
+
 Restart and press f12 among the entries you will have the last created, click any key, then click alt + ì a menu will appear and
 scroll to CpuSetup and click enter, in the new screen go with the arrows on the value 0043 and change it from 01 to 00 and click 
 enter and then ctrl + w to save and then alt + q to exit. proceed to check if your CFG LOCK is unlocked.
+
 For the 2 DVMT values you have to go to the PchSetup menu and enter and look for 00A4 and set it from 02 to 05 and then move 
-next to 00A5 and set from 02 to 03 then save with ctrl + we to exit alt + ì and you will have the suitable DVMT values to the igpu ice lake.
+next to 00A5 and set from 02 to 03 then save with ctrl + w and to exit alt + ì and you will have the suitable DVMT values to the igpu ice lake.
 
 
 ## Credits
