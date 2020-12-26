@@ -73,7 +73,7 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 
 See [ioreg](./ioreg%20MacBook%20Pro%2016%2C2.ioreg) for more clarification
 
-## Bios settings
+## Bios settings for Bios Version 1.4.4
 ### Enable :
 * SATA Operation : AHCI
 * Fastboot : Thorough
