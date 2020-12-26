@@ -106,7 +106,7 @@ scroll to CpuSetup and click enter, in the new screen go with the arrows on the 
 enter and then ctrl + w to save and then alt + q to exit. proceed to check if your CFG LOCK is unlocked.
 
 For the 2 DVMT values you have to go to the PchSetup menu and enter and look for 00A4 and set it from 02 to 05 and then move 
-next to 00A5 and set from 02 to 03 then save with ctrl + w and to exit alt + ì and you will have the suitable DVMT values to the igpu ice lake.
+next to 00A5 and set from 02 to 03 then save with ctrl + w and to exit alt + q and you will have the suitable DVMT values to the igpu ice lake.
 
 
 ## Credits
