@@ -73,6 +73,12 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 
 See [ioreg](./ioreg%20MacBook%20Pro%2016%2C2.ioreg) for more clarification
 
+
+### MacOS bootable USB creation:
+- Read the Dortania guide for creating your USB from Windows or macOS
+- [Guide Dortania](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/)- USB creation
+
+
 ## Bios settings for Bios Version 1.4.4
 ### Enable :
 * SATA Operation : AHCI
