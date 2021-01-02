@@ -5,13 +5,13 @@
  * 
  * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of iASLwtCCAe.aml, Wed Dec 23 15:08:04 2020
+ * Disassembly of iASLyF2ker.aml, Sat Jan  2 15:09:59 2021
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x000003A7 (935)
+ *     Length           0x000003A6 (934)
  *     Revision         0x02
- *     Checksum         0xFE
+ *     Checksum         0xE9
  *     OEM ID           "DELL"
  *     OEM Table ID     "V-5401"
  *     OEM Revision     0x00000000 (0)
@@ -30,8 +30,8 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "V-5401", 0x00000000)
     External (_SB_.PCI0.LPCB, DeviceObj)
     External (_SB_.PCI0.LPCB.PS2K, DeviceObj)
     External (_SB_.PR00, ProcessorObj)
-    External (GPHD, FieldUnitObj)
     External (STAS, IntObj)
+    External (TPDM, FieldUnitObj)
     External (XPRW, MethodObj)    // 2 Arguments
 
     Scope (\_SB)
@@ -230,7 +230,7 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "V-5401", 0x00000000)
         If (_OSI ("Darwin"))
         {
             STAS = One
-            GPHD = 0x02
+            TPDM = Zero
             \_SB.ACOS = 0x80
             \_SB.ACSE = Zero
         }
