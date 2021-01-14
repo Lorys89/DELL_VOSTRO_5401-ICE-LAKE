@@ -48,6 +48,7 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 - [x] WebCam (USB-Internal)
 - [x] All Sensors CPU, IGPU, BATTERY, NVME, FAN
 - [x] ACPI Battery
+- [x] Apple VTD
 - [x] NVRAM (Native)
 - [x] Recovery (macOS) boot from OpenCore
 - [x] Windows 10 boot from OpenCore
@@ -97,7 +98,6 @@ See [ioreg](./ioreg%20MacBook%20Pro%2016%2C2.ioreg) for more clarification
 * Power On Lid Open
 * Enable UEFI Network Stack
 * Sign Of Life : Early Logo Display / Early keyboard backlight
-* VT for Direct I/O
 * cfg lock and DVMT: DO AT YOUR OWN RISK!!! It may brick your laptop.
 
  ![CFG-Lock](./Screenshot/CFG-Lock.png)
