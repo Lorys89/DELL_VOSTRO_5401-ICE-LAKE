@@ -1,17 +1,17 @@
 /*
  * Intel ACPI Component Architecture
- * AML/ASL+ Disassembler version 20180427 (64-bit version)(RM)
- * Copyright (c) 2000 - 2018 Intel Corporation
+ * AML/ASL+ Disassembler version 20200925 (64-bit version)
+ * Copyright (c) 2000 - 2020 Intel Corporation
  * 
- * Disassembling to non-symbolic legacy ASL operators
+ * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of iASLFK8I5c.aml, Sun Jan 10 17:15:49 2021
+ * Disassembly of iASL0es5zE.aml, Mon Jan 18 08:30:48 2021
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x000003A6 (934)
+ *     Length           0x000003B5 (949)
  *     Revision         0x02
- *     Checksum         0xA1
+ *     Checksum         0xE9
  *     OEM ID           "DELL"
  *     OEM Table ID     "V-5401"
  *     OEM Revision     0x00000000 (0)
@@ -20,19 +20,19 @@
  */
 DefinitionBlock ("", "SSDT", 2, "DELL", "V-5401", 0x00000000)
 {
-    External (_SB_.AC__, DeviceObj)    // (from opcode)
-    External (_SB_.ACOS, IntObj)    // (from opcode)
-    External (_SB_.ACSE, IntObj)    // (from opcode)
-    External (_SB_.PCI0, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.I2C1, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.I2C1.TPD0, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.PS2K, DeviceObj)    // (from opcode)
-    External (_SB_.PR00, ProcessorObj)    // (from opcode)
-    External (STAS, IntObj)    // (from opcode)
-    External (TPDM, FieldUnitObj)    // (from opcode)
-    External (XPRW, MethodObj)    // 2 Arguments (from opcode)
+    External (_SB_.AC__, DeviceObj)
+    External (_SB_.ACOS, IntObj)
+    External (_SB_.ACSE, IntObj)
+    External (_SB_.PCI0, DeviceObj)
+    External (_SB_.PCI0.GFX0, DeviceObj)
+    External (_SB_.PCI0.I2C1, DeviceObj)
+    External (_SB_.PCI0.I2C1.TPD0, DeviceObj)
+    External (_SB_.PCI0.LPCB, DeviceObj)
+    External (_SB_.PCI0.LPCB.PS2K, DeviceObj)
+    External (_SB_.PR00, ProcessorObj)
+    External (STAS, IntObj)
+    External (TPDM, FieldUnitObj)
+    External (XPRW, MethodObj)    // 2 Arguments
 
     Scope (\_SB)
     {
@@ -41,11 +41,11 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "V-5401", 0x00000000)
             Name (_ADR, Zero)  // _ADR: Address
             Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
             {
-                If (LEqual (Arg2, Zero))
+                If ((Arg2 == Zero))
                 {
                     Return (Buffer (One)
                     {
-                         0x03                                           
+                         0x03                                             // .
                     })
                 }
 
@@ -77,11 +77,11 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "V-5401", 0x00000000)
             {
                 Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                 {
-                    If (LEqual (Arg2, Zero))
+                    If ((Arg2 == Zero))
                     {
                         Return (Buffer (One)
                         {
-                             0x03                                           
+                             0x03                                             // .
                         })
                     }
 
@@ -199,27 +199,30 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "V-5401", 0x00000000)
 
                 Scope (PS2K)
                 {
-                    Name (RMCF, Package (0x04)
+                    If (_OSI ("Darwin"))
                     {
-                        "Keyboard", 
-                        Package (0x02)
+                        Name (RMCF, Package (0x04)
                         {
-                            "RemapPrntScr", 
-                            ">y"
-                        }, 
-
-                        "Keyboard", 
-                        Package (0x02)
-                        {
-                            "Custom PS2 Map", 
-                            Package (0x03)
+                            "Keyboard", 
+                            Package (0x02)
                             {
-                                Package (0x00){}, 
-                                "46=0", 
-                                "e045=0"
+                                "RemapPrntScr", 
+                                ">y"
+                            }, 
+
+                            "Keyboard", 
+                            Package (0x02)
+                            {
+                                "Custom PS2 Map", 
+                                Package (0x03)
+                                {
+                                    Package (0x00){}, 
+                                    "46=0", 
+                                    "e045=0"
+                                }
                             }
-                        }
-                    })
+                        })
+                    }
                 }
             }
         }
@@ -229,10 +232,10 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "V-5401", 0x00000000)
     {
         If (_OSI ("Darwin"))
         {
-            Store (One, STAS)
-            Store (Zero, TPDM)
-            Store (0x80, \_SB.ACOS)
-            Store (Zero, \_SB.ACSE)
+            STAS = One
+            TPDM = Zero
+            \_SB.ACOS = 0x80
+            \_SB.ACSE = Zero
         }
     }
 
@@ -240,7 +243,7 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "V-5401", 0x00000000)
     {
         If (_OSI ("Darwin"))
         {
-            If (LEqual (0x6D, Arg0))
+            If ((0x6D == Arg0))
             {
                 Return (Package (0x02)
                 {
@@ -249,7 +252,7 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "V-5401", 0x00000000)
                 })
             }
 
-            If (LEqual (0x0D, Arg0))
+            If ((0x0D == Arg0))
             {
                 Return (Package (0x02)
                 {

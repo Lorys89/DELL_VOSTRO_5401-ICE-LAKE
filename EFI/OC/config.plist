@@ -119,46 +119,6 @@
 	<dict>
 		<key>Add</key>
 		<dict>
-			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
-			<dict>
-				<key>AAPL,GfxYTile</key>
-				<data>AQAAAA==</data>
-				<key>AAPL,ig-platform-id</key>
-				<data>AgBRig==</data>
-				<key>AAPL,slot-name</key>
-				<string>Built In</string>
-				<key>device-id</key>
-				<data>UooAAA==</data>
-				<key>device_type</key>
-				<string>VGA compatible controller</string>
-				<key>enable-backlight-registers-fix</key>
-				<data>AQAAAA==</data>
-				<key>enable-cdclk-frequency-fix</key>
-				<data>AQAAAA==</data>
-				<key>force-online</key>
-				<data>AQAAAA==</data>
-				<key>framebuffer-patch-enable</key>
-				<data>AQAAAA==</data>
-				<key>hda-gfx</key>
-				<string>onboard-1</string>
-				<key>igfxfw</key>
-				<data>AgAAAA==</data>
-				<key>model</key>
-				<string>Intel Iris Plus Graphics</string>
-			</dict>
-			<key>PciRoot(0x0)/Pci(0x1F,0x3)</key>
-			<dict>
-				<key>AAPL,slot-name</key>
-				<string>Built In</string>
-				<key>device_type</key>
-				<string>Audio Controller</string>
-				<key>hda-gfx</key>
-				<string>onboard-1</string>
-				<key>layout-id</key>
-				<integer>14</integer>
-				<key>model</key>
-				<string>Realtek High Definition Audio Controller</string>
-			</dict>
 			<key>PciRoot(0x0)/Pci(0x12,0x0)</key>
 			<dict>
 				<key>AAPL,slot-name</key>
@@ -221,6 +181,8 @@
 				<integer>0</integer>
 				<key>AAPL,slot-name</key>
 				<string>Built In</string>
+				<key>brcmfx-country</key>
+				<string>#a</string>
 				<key>device_type</key>
 				<string>AirPort Extreme</string>
 				<key>model</key>
@@ -253,6 +215,19 @@
 				<key>model</key>
 				<string>Intel Corporation, Series Chipset NVME Controller</string>
 			</dict>
+			<key>PciRoot(0x0)/Pci(0x1F,0x3)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Built In</string>
+				<key>device_type</key>
+				<string>Audio Controller</string>
+				<key>hda-gfx</key>
+				<string>onboard-1</string>
+				<key>layout-id</key>
+				<integer>14</integer>
+				<key>model</key>
+				<string>Realtek High Definition Audio Controller</string>
+			</dict>
 			<key>PciRoot(0x0)/Pci(0x1F,0x4)</key>
 			<dict>
 				<key>AAPL,slot-name</key>
@@ -270,6 +245,33 @@
 				<string>Serial Bus Controller</string>
 				<key>model</key>
 				<string>Intel Corporation, Series Chipset SPI Controller</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
+			<dict>
+				<key>AAPL,GfxYTile</key>
+				<data>AQAAAA==</data>
+				<key>AAPL,ig-platform-id</key>
+				<data>AgBRig==</data>
+				<key>AAPL,slot-name</key>
+				<string>Built In</string>
+				<key>device-id</key>
+				<data>UooAAA==</data>
+				<key>device_type</key>
+				<string>VGA compatible controller</string>
+				<key>enable-backlight-registers-fix</key>
+				<data>AQAAAA==</data>
+				<key>enable-cdclk-frequency-fix</key>
+				<data>AQAAAA==</data>
+				<key>force-online</key>
+				<data>AQAAAA==</data>
+				<key>framebuffer-patch-enable</key>
+				<data>AQAAAA==</data>
+				<key>hda-gfx</key>
+				<string>onboard-1</string>
+				<key>igfxfw</key>
+				<data>AgAAAA==</data>
+				<key>model</key>
+				<string>Intel Iris Plus Graphics</string>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x4,0x0)</key>
 			<dict>
@@ -729,6 +731,24 @@
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
+			<dict>
+				<key>Arch</key>
+				<string>Any</string>
+				<key>BundlePath</key>
+				<string>DebugEnhancer.kext</string>
+				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
+				<true/>
+				<key>ExecutablePath</key>
+				<string>Contents/MacOS/DebugEnhancer</string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string></string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+			</dict>
 		</array>
 		<key>Block</key>
 		<array/>
@@ -762,7 +782,7 @@
 			<key>CustomSMBIOSGuid</key>
 			<true/>
 			<key>DisableIoMapper</key>
-			<true/>
+			<false/>
 			<key>DisableLinkeditJettison</key>
 			<true/>
 			<key>DisableRtcChecksum</key>
@@ -844,7 +864,7 @@
 			<key>SysReport</key>
 			<false/>
 			<key>Target</key>
-			<integer>3</integer>
+			<integer>0</integer>
 		</dict>
 		<key>Entries</key>
 		<array/>
@@ -867,7 +887,7 @@
 			<key>EnablePassword</key>
 			<false/>
 			<key>ExposeSensitiveData</key>
-			<integer>6</integer>
+			<integer>3</integer>
 			<key>HaltLevel</key>
 			<integer>2147483648</integer>
 			<key>PasswordHash</key>
@@ -942,7 +962,7 @@
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 				<key>boot-args</key>
-				<string>brcmfx-country=#a -noDC9 -v</string>
+				<string>-noDC9 -v</string>
 				<key>csr-active-config</key>
 				<data>AAAAAA==</data>
 				<key>prev-lang:kbd</key>
@@ -1011,21 +1031,21 @@
 			<key>AdviseWindows</key>
 			<false/>
 			<key>MLB</key>
-			<string>C02025200CD00001H</string>
+			<string>C02015700QX0000UE</string>
 			<key>ProcessorType</key>
 			<integer>0</integer>
 			<key>ROM</key>
-			<data>9DanSRj/</data>
+			<data>XoecBB9y</data>
 			<key>SpoofVendor</key>
-			<true/>
+			<false/>
 			<key>SystemMemoryStatus</key>
 			<string>Upgradable</string>
 			<key>SystemProductName</key>
 			<string>MacBookPro16,2</string>
 			<key>SystemSerialNumber</key>
-			<string>C02CW4YEML7H</string>
+			<string>C02CKZZJML7H</string>
 			<key>SystemUUID</key>
-			<string>1D296D23-398C-4B3A-8BF9-A4F6524918FF</string>
+			<string>2D28E747-0584-4468-8D31-8305C30A32EB</string>
 		</dict>
 		<key>UpdateDataHub</key>
 		<true/>
@@ -1078,7 +1098,7 @@
 		<array>
 			<string>OpenCanopy.efi</string>
 			<string>OpenRuntime.efi</string>
-			<string>VBoxHfs.efi</string>
+			<string>OpenHfsPlus.efi</string>
 		</array>
 		<key>Input</key>
 		<dict>
