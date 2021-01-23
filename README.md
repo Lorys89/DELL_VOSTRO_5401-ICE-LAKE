@@ -62,6 +62,7 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 ![infopci](./Screenshot/pci-dev.png)
 ![Temp-Fan-Control](./Screenshot/Temp-Fan-Control.png)
 ![speedtest](./Screenshot/speedtest.png)
+![touchpad](./Screenshot/touchpad.png)
 ![CPU](./Screenshot/CPU.png)
 ![openCL](./Screenshot/openCL.png)
 ![metal](./Screenshot/metal.png)
