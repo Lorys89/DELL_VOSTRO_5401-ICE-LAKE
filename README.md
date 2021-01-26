@@ -1,6 +1,6 @@
 # Dell Vostro 5401 (Ice Lake) Hackintosh
 [![Gitter chat](https://img.shields.io/gitter/room/nwjs/nw.js.svg?colorB=ed1965)](https://gitter.im/ICE-LAKE-HACKINTOSH-DEVELOPMENT/community)
-[![](https://img.shields.io/badge/OS-Release-informational?style=flat&logo=apple&logoColor=white&color=AC4142)](https://www.apple.com/)
+[![](https://img.shields.io/badge/EFI-Release-informational?style=flat&logo=apple&logoColor=white&color=AC4142)](https://www.apple.com/)
 
 
 EFI for Dell Vostro 5401 with OpenCore bootloader
