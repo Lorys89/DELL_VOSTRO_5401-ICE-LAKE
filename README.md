@@ -140,5 +140,3 @@ next to 00A5 and set from 02 to 03 then save with ctrl + w and to exit alt + q a
 - [Acidanthera](https://github.com/acidanthera) for OpenCore and all the lovely hackintosh work.
 - [Dortania](https://dortania.github.io/OpenCore-Install-Guide/config-laptop.plist/icelake.html) For great and detailed guides.
 - [Hackintoshlifeit](https://github.com/Hackintoshlifeit) Support group for installation and post installation.
-
-# If you need help please contact us on [Telegram](https://t.me/HackintoshLife_it) or [Web](https://www.hackintoshlife.it/)
