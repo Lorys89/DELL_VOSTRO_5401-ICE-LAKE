@@ -9,6 +9,7 @@
 
 
 EFI for Dell Vostro 5401 with OpenCore bootloader
+(Compatible for Dell Inspiron 5401/5408/5501/5508 e Vostro 5401/5501)
 
 ![descrizione](./Screenshot/pc.jpg)
 
