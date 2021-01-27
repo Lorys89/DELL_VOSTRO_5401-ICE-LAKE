@@ -81,6 +81,7 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 ![metal](./Screenshot/metal.png)
 ![videoproc](./Screenshot/videoproc.png)
 ![Bench-Ram-Nvme](./Screenshot/Bench-Ram-Nvme.png)
+![Intel-PWR-Gadget](./Screenshot/intel-pwr-gadget.png)
 
 
 ### Special Config:
