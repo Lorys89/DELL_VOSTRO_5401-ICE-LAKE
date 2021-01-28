@@ -137,6 +137,10 @@ next to 00A5 and set from 02 to 03 then save with ctrl + w and to exit alt + q a
 ![SaSetup](./TOOLS%20EFI%20MOD/SaSetup.bmp)
 
 
+### Working all NATIVE-SHORTCUTS-APPLE:
+
+![APPLE-NATIVE-SHORTCUTS](./Screenshot/APPLE-NATIVE-SHORTCUTS.png)
+
 ## Credits
 
 - [Apple](https://apple.com) for macOS.
