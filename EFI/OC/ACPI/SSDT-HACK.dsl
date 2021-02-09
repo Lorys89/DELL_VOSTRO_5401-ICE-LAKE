@@ -30,8 +30,6 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "V-5401", 0x00000000)
     External (_SB_.PCI0.LPCB, DeviceObj)
     External (_SB_.PCI0.LPCB.PS2K, DeviceObj)
     External (_SB_.PR00, ProcessorObj)
-    External (ACOS, IntObj)
-    External (ACSE, IntObj)
     External (STAS, IntObj)
     External (TPDM, FieldUnitObj)
     External (XPRW, MethodObj)    // 2 Arguments
