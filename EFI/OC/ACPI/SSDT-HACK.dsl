@@ -5,18 +5,18 @@
  * 
  * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of iASL0es5zE.aml, Mon Jan 18 08:30:48 2021
+ * Disassembly of iASLdiFp9n.aml, Tue Feb  9 13:37:05 2021
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x000003B5 (949)
+ *     Length           0x0000039B (923)
  *     Revision         0x02
- *     Checksum         0xE9
+ *     Checksum         0x63
  *     OEM ID           "DELL"
  *     OEM Table ID     "V-5401"
  *     OEM Revision     0x00000000 (0)
  *     Compiler ID      "INTL"
- *     Compiler Version 0x20180427 (538444839)
+ *     Compiler Version 0x20200925 (538970405)
  */
 DefinitionBlock ("", "SSDT", 2, "DELL", "V-5401", 0x00000000)
 {
@@ -30,12 +30,22 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "V-5401", 0x00000000)
     External (_SB_.PCI0.LPCB, DeviceObj)
     External (_SB_.PCI0.LPCB.PS2K, DeviceObj)
     External (_SB_.PR00, ProcessorObj)
+    External (ACOS, IntObj)
+    External (ACSE, IntObj)
     External (STAS, IntObj)
     External (TPDM, FieldUnitObj)
     External (XPRW, MethodObj)    // 2 Arguments
 
     Scope (\_SB)
     {
+        If (_OSI ("Darwin"))
+        {
+            STAS = One
+            TPDM = Zero
+            ACOS = 0x80
+            ACSE = Zero
+        }
+
         Device (USBX)
         {
             Name (_ADR, Zero)  // _ADR: Address
@@ -225,17 +235,6 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "V-5401", 0x00000000)
                     }
                 }
             }
-        }
-    }
-
-    Scope (\)
-    {
-        If (_OSI ("Darwin"))
-        {
-            STAS = One
-            TPDM = Zero
-            \_SB.ACOS = 0x80
-            \_SB.ACSE = Zero
         }
     }
 
