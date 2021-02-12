@@ -5,13 +5,13 @@
  * 
  * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of iASLUhXchH.aml, Fri Feb 12 22:54:05 2021
+ * Disassembly of iASLbKdTVf.aml, Sat Feb 13 00:25:01 2021
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x000003BC (956)
+ *     Length           0x000003EE (1006)
  *     Revision         0x02
- *     Checksum         0x44
+ *     Checksum         0x68
  *     OEM ID           "DELL"
  *     OEM Table ID     "V-5401"
  *     OEM Revision     0x00000000 (0)
@@ -49,12 +49,16 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "V-5401", 0x00000000)
                     })
                 }
 
-                Return (Package (0x04)
+                Return (Package (0x08)
                 {
+                    "kUSBSleepPowerSupply", 
+                    0x13EC, 
                     "kUSBSleepPortCurrentLimit", 
-                    0x0BB8, 
+                    0x0834, 
+                    "kUSBWakePowerSupply", 
+                    0x13EC, 
                     "kUSBWakePortCurrentLimit", 
-                    0x0BB8
+                    0x0834
                 })
             }
 
