@@ -61,7 +61,6 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 - [x] WebCam (USB-Internal)
 - [x] All Sensors CPU, IGPU, BATTERY, NVME, FAN
 - [x] ACPI Battery
-- [x] Apple VTD
 - [x] NVRAM (Native)
 - [x] Recovery (macOS) boot from OpenCore
 - [x] Windows 10 boot from OpenCore
