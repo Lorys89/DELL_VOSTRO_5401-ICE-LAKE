@@ -5,13 +5,13 @@
  * 
  * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of iASLbKdTVf.aml, Sat Feb 13 00:25:01 2021
+ * Disassembly of iASLfsTwAx.aml, Wed Apr  7 17:30:04 2021
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x000003EE (1006)
+ *     Length           0x000003E7 (999)
  *     Revision         0x02
- *     Checksum         0x68
+ *     Checksum         0x02
  *     OEM ID           "DELL"
  *     OEM Table ID     "V-5401"
  *     OEM Revision     0x00000000 (0)
@@ -234,15 +234,12 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "V-5401", 0x00000000)
 
     Scope (\)
     {
-        Method (_INI, 0, NotSerialized)  // _INI: Initialize
+        If (_OSI ("Darwin"))
         {
-            If (_OSI ("Darwin"))
-            {
-                STAS = One
-                TPDM = Zero
-                \_SB.ACOS = 0x80
-                \_SB.ACSE = Zero
-            }
+            STAS = One
+            TPDM = Zero
+            \_SB.ACOS = 0x80
+            \_SB.ACSE = Zero
         }
     }
 
