@@ -28,7 +28,7 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 | NVME             | SAMSUNG 970 EVO PLUS 500 GB (MACOS)|
 | SmBios           | MacBookPro 16,2                    |
 | BootLoader       | OpenCore 0.6.8                     |
-| macOS            | Big Sur 11.3 (BETA 6)              |
+| macOS            | Big Sur 11.4 (BETA 1)              |
 
 
 ![infobigsur](./Screenshot/infomac.png)
