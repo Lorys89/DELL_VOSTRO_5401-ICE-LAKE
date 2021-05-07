@@ -5,13 +5,13 @@
  * 
  * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of iASLfsTwAx.aml, Wed Apr  7 17:30:04 2021
+ * Disassembly of iASLQ5Ec3h.aml, Fri May  7 22:55:48 2021
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x000003E7 (999)
+ *     Length           0x000003B5 (949)
  *     Revision         0x02
- *     Checksum         0x02
+ *     Checksum         0xFD
  *     OEM ID           "DELL"
  *     OEM Table ID     "V-5401"
  *     OEM Revision     0x00000000 (0)
@@ -34,51 +34,21 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "V-5401", 0x00000000)
     External (TPDM, FieldUnitObj)
     External (XPRW, MethodObj)    // 2 Arguments
 
-    Scope (\_SB)
+    Scope (\)
     {
-        Device (USBX)
+        If (_OSI ("Darwin"))
         {
-            Name (_ADR, Zero)  // _ADR: Address
-            Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
-            {
-                If ((Arg2 == Zero))
-                {
-                    Return (Buffer (One)
-                    {
-                         0x03                                             // .
-                    })
-                }
-
-                Return (Package (0x08)
-                {
-                    "kUSBSleepPowerSupply", 
-                    0x13EC, 
-                    "kUSBSleepPortCurrentLimit", 
-                    0x0834, 
-                    "kUSBWakePowerSupply", 
-                    0x13EC, 
-                    "kUSBWakePortCurrentLimit", 
-                    0x0834
-                })
-            }
-
-            Method (_STA, 0, NotSerialized)  // _STA: Status
-            {
-                If (_OSI ("Darwin"))
-                {
-                    Return (0x0F)
-                }
-                Else
-                {
-                    Return (Zero)
-                }
-            }
+            STAS = One
+            TPDM = Zero
+            \_SB.ACOS = 0x80
+            \_SB.ACSE = Zero
         }
 
-        Scope (PR00)
+        Scope (_SB)
         {
-            If (_OSI ("Darwin"))
+            Device (USBX)
             {
+                Name (_ADR, Zero)  // _ADR: Address
                 Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                 {
                     If ((Arg2 == Zero))
@@ -89,32 +59,15 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "V-5401", 0x00000000)
                         })
                     }
 
-                    Return (Package (0x02)
+                    Return (Package (0x04)
                     {
-                        "plugin-type", 
-                        One
+                        "kUSBSleepPortCurrentLimit", 
+                        0x0BB8, 
+                        "kUSBWakePortCurrentLimit", 
+                        0x0BB8
                     })
                 }
-            }
-        }
 
-        Scope (AC)
-        {
-            If (_OSI ("Darwin"))
-            {
-                Name (_PRW, Package (0x02)  // _PRW: Power Resources for Wake
-                {
-                    0x6F, 
-                    0x03
-                })
-            }
-        }
-
-        Scope (PCI0)
-        {
-            Device (MCHC)
-            {
-                Name (_ADR, Zero)  // _ADR: Address
                 Method (_STA, 0, NotSerialized)  // _STA: Status
                 {
                     If (_OSI ("Darwin"))
@@ -128,66 +81,46 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "V-5401", 0x00000000)
                 }
             }
 
-            Scope (I2C1)
+            Scope (PR00)
             {
-                Scope (TPD0)
+                If (_OSI ("Darwin"))
                 {
-                    If (_OSI ("Darwin"))
+                    Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                     {
-                        Name (OSYS, 0x07DC)
+                        If ((Arg2 == Zero))
+                        {
+                            Return (Buffer (One)
+                            {
+                                 0x03                                             // .
+                            })
+                        }
+
+                        Return (Package (0x02)
+                        {
+                            "plugin-type", 
+                            One
+                        })
                     }
                 }
             }
 
-            Scope (GFX0)
+            Scope (AC)
             {
-                Device (PNLF)
+                If (_OSI ("Darwin"))
                 {
-                    Name (_HID, EisaId ("APP0002"))  // _HID: Hardware ID
-                    Name (_CID, "backlight")  // _CID: Compatible ID
-                    Name (_UID, 0x13)  // _UID: Unique ID
-                    Method (_STA, 0, NotSerialized)  // _STA: Status
+                    Name (_PRW, Package (0x02)  // _PRW: Power Resources for Wake
                     {
-                        If (_OSI ("Darwin"))
-                        {
-                            Return (0x0B)
-                        }
-                        Else
-                        {
-                            Return (Zero)
-                        }
-                    }
-                }
-            }
-
-            Scope (LPCB)
-            {
-                Device (PMCR)
-                {
-                    Name (_HID, EisaId ("APP9876"))  // _HID: Hardware ID
-                    Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
-                    {
-                        Memory32Fixed (ReadWrite,
-                            0xFE000000,         // Address Base
-                            0x00010000,         // Address Length
-                            )
+                        0x6F, 
+                        0x03
                     })
-                    Method (_STA, 0, NotSerialized)  // _STA: Status
-                    {
-                        If (_OSI ("Darwin"))
-                        {
-                            Return (0x0B)
-                        }
-                        Else
-                        {
-                            Return (Zero)
-                        }
-                    }
                 }
+            }
 
-                Device (EC)
+            Scope (PCI0)
+            {
+                Device (MCHC)
                 {
-                    Name (_HID, "ACID0001")  // _HID: Hardware ID
+                    Name (_ADR, Zero)  // _ADR: Address
                     Method (_STA, 0, NotSerialized)  // _STA: Status
                     {
                         If (_OSI ("Darwin"))
@@ -201,45 +134,108 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "V-5401", 0x00000000)
                     }
                 }
 
-                Scope (PS2K)
+                Scope (I2C1)
                 {
-                    If (_OSI ("Darwin"))
+                    Scope (TPD0)
                     {
-                        Name (RMCF, Package (0x04)
+                        If (_OSI ("Darwin"))
                         {
-                            "Keyboard", 
-                            Package (0x02)
-                            {
-                                "RemapPrntScr", 
-                                ">y"
-                            }, 
+                            Name (OSYS, 0x07DC)
+                        }
+                    }
+                }
 
-                            "Keyboard", 
-                            Package (0x02)
+                Scope (GFX0)
+                {
+                    Device (PNLF)
+                    {
+                        Name (_HID, EisaId ("APP0002"))  // _HID: Hardware ID
+                        Name (_CID, "backlight")  // _CID: Compatible ID
+                        Name (_UID, 0x13)  // _UID: Unique ID
+                        Method (_STA, 0, NotSerialized)  // _STA: Status
+                        {
+                            If (_OSI ("Darwin"))
                             {
-                                "Custom PS2 Map", 
-                                Package (0x03)
-                                {
-                                    Package (0x00){}, 
-                                    "46=0", 
-                                    "e045=0"
-                                }
+                                Return (0x0B)
                             }
+                            Else
+                            {
+                                Return (Zero)
+                            }
+                        }
+                    }
+                }
+
+                Scope (LPCB)
+                {
+                    Device (PMCR)
+                    {
+                        Name (_HID, EisaId ("APP9876"))  // _HID: Hardware ID
+                        Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
+                        {
+                            Memory32Fixed (ReadWrite,
+                                0xFE000000,         // Address Base
+                                0x00010000,         // Address Length
+                                )
                         })
+                        Method (_STA, 0, NotSerialized)  // _STA: Status
+                        {
+                            If (_OSI ("Darwin"))
+                            {
+                                Return (0x0B)
+                            }
+                            Else
+                            {
+                                Return (Zero)
+                            }
+                        }
+                    }
+
+                    Device (EC)
+                    {
+                        Name (_HID, "ACID0001")  // _HID: Hardware ID
+                        Method (_STA, 0, NotSerialized)  // _STA: Status
+                        {
+                            If (_OSI ("Darwin"))
+                            {
+                                Return (0x0F)
+                            }
+                            Else
+                            {
+                                Return (Zero)
+                            }
+                        }
+                    }
+
+                    Scope (PS2K)
+                    {
+                        If (_OSI ("Darwin"))
+                        {
+                            Name (RMCF, Package (0x04)
+                            {
+                                "Keyboard", 
+                                Package (0x02)
+                                {
+                                    "RemapPrntScr", 
+                                    ">y"
+                                }, 
+
+                                "Keyboard", 
+                                Package (0x02)
+                                {
+                                    "Custom PS2 Map", 
+                                    Package (0x03)
+                                    {
+                                        Package (0x00){}, 
+                                        "46=0", 
+                                        "e045=0"
+                                    }
+                                }
+                            })
+                        }
                     }
                 }
             }
-        }
-    }
-
-    Scope (\)
-    {
-        If (_OSI ("Darwin"))
-        {
-            STAS = One
-            TPDM = Zero
-            \_SB.ACOS = 0x80
-            \_SB.ACSE = Zero
         }
     }
 
