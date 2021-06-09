@@ -32,7 +32,7 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 | macOS            | Big Sur 11.5                       |
 
 
-
+![infomonterey](./Screenshot/infomonterey.png)
 ![infobigsur](./Screenshot/infomac.png)
 
 ### What works and What doesn't or WIP:
