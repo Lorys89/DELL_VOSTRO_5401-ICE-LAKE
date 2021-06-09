@@ -5,13 +5,13 @@
  * 
  * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of iASLQ5Ec3h.aml, Fri May  7 22:55:48 2021
+ * Disassembly of iASLVKfc3h.aml, Wed Jun  9 22:34:02 2021
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x000003B5 (949)
+ *     Length           0x0000042E (1070)
  *     Revision         0x02
- *     Checksum         0xFD
+ *     Checksum         0xE1
  *     OEM ID           "DELL"
  *     OEM Table ID     "V-5401"
  *     OEM Revision     0x00000000 (0)
@@ -29,7 +29,10 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "V-5401", 0x00000000)
     External (_SB_.PCI0.I2C1.TPD0, DeviceObj)
     External (_SB_.PCI0.LPCB, DeviceObj)
     External (_SB_.PCI0.LPCB.PS2K, DeviceObj)
+    External (_SB_.PCI0.TXHC, DeviceObj)
+    External (_SB_.PCI0.TXHC.RHUB, DeviceObj)
     External (_SB_.PR00, ProcessorObj)
+    External (_SB_.UBTC, DeviceObj)
     External (STAS, IntObj)
     External (TPDM, FieldUnitObj)
     External (XPRW, MethodObj)    // 2 Arguments
@@ -116,6 +119,14 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "V-5401", 0x00000000)
                 }
             }
 
+            Scope (UBTC)
+            {
+                If (_OSI ("Darwin"))
+                {
+                    Name (OSYS, 0x07DF)
+                }
+            }
+
             Scope (PCI0)
             {
                 Device (MCHC)
@@ -130,6 +141,24 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "V-5401", 0x00000000)
                         Else
                         {
                             Return (Zero)
+                        }
+                    }
+                }
+
+                Scope (TXHC)
+                {
+                    Scope (RHUB)
+                    {
+                        Method (_STA, 0, NotSerialized)  // _STA: Status
+                        {
+                            If (_OSI ("Darwin"))
+                            {
+                                Return (Zero)
+                            }
+                            Else
+                            {
+                                Return (0x0F)
+                            }
                         }
                     }
                 }
