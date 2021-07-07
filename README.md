@@ -27,7 +27,7 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 | NVMe             | HYNIX BC511 512 GB (WINDOWS)       |
 | NVME             | SAMSUNG 970 EVO PLUS 500 GB (MACOS)|
 | SmBios           | MacBookPro 16,2                    |
-| BootLoader       | OpenCore 0.7.0                     |
+| BootLoader       | OpenCore 0.7.1                     |
 | macOS            | Monterey 12.0 (BETA 2)             |
 | macOS            | Big Sur 11.5                       |
 
