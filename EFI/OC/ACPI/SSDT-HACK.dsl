@@ -5,13 +5,13 @@
  * 
  * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of iASLVKfc3h.aml, Wed Jun  9 22:34:02 2021
+ * Disassembly of iASLgpEmkw.aml, Thu Jul  8 00:56:43 2021
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x0000042E (1070)
+ *     Length           0x00000451 (1105)
  *     Revision         0x02
- *     Checksum         0xE1
+ *     Checksum         0x2B
  *     OEM ID           "DELL"
  *     OEM Table ID     "V-5401"
  *     OEM Revision     0x00000000 (0)
@@ -29,10 +29,10 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "V-5401", 0x00000000)
     External (_SB_.PCI0.I2C1.TPD0, DeviceObj)
     External (_SB_.PCI0.LPCB, DeviceObj)
     External (_SB_.PCI0.LPCB.PS2K, DeviceObj)
-    External (_SB_.PCI0.TXHC, DeviceObj)
-    External (_SB_.PCI0.TXHC.RHUB, DeviceObj)
+    External (_SB_.PCI0.LPCB.PS2M, DeviceObj)
+    External (_SB_.PCI0.LPCB.RTC_, DeviceObj)
     External (_SB_.PR00, ProcessorObj)
-    External (_SB_.UBTC, DeviceObj)
+    External (HPTE, IntObj)
     External (STAS, IntObj)
     External (TPDM, FieldUnitObj)
     External (XPRW, MethodObj)    // 2 Arguments
@@ -43,6 +43,7 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "V-5401", 0x00000000)
         {
             STAS = One
             TPDM = Zero
+            HPTE = Zero
             \_SB.ACOS = 0x80
             \_SB.ACSE = Zero
         }
@@ -119,14 +120,6 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "V-5401", 0x00000000)
                 }
             }
 
-            Scope (UBTC)
-            {
-                If (_OSI ("Darwin"))
-                {
-                    Name (OSYS, 0x07DF)
-                }
-            }
-
             Scope (PCI0)
             {
                 Device (MCHC)
@@ -141,24 +134,6 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "V-5401", 0x00000000)
                         Else
                         {
                             Return (Zero)
-                        }
-                    }
-                }
-
-                Scope (TXHC)
-                {
-                    Scope (RHUB)
-                    {
-                        Method (_STA, 0, NotSerialized)  // _STA: Status
-                        {
-                            If (_OSI ("Darwin"))
-                            {
-                                Return (Zero)
-                            }
-                            Else
-                            {
-                                Return (0x0F)
-                            }
                         }
                     }
                 }
@@ -220,6 +195,46 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "V-5401", 0x00000000)
                         }
                     }
 
+                    Scope (RTC)
+                    {
+                        Method (_STA, 0, NotSerialized)  // _STA: Status
+                        {
+                            If (_OSI ("Darwin"))
+                            {
+                                Return (Zero)
+                            }
+                            Else
+                            {
+                                Return (0x0F)
+                            }
+                        }
+                    }
+
+                    Device (ARTC)
+                    {
+                        Name (_HID, EisaId ("PNP0B00") /* AT Real-Time Clock */)  // _HID: Hardware ID
+                        Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
+                        {
+                            IO (Decode16,
+                                0x0070,             // Range Minimum
+                                0x0070,             // Range Maximum
+                                0x01,               // Alignment
+                                0x02,               // Length
+                                )
+                        })
+                        Method (_STA, 0, NotSerialized)  // _STA: Status
+                        {
+                            If (_OSI ("Darwin"))
+                            {
+                                Return (0x0F)
+                            }
+                            Else
+                            {
+                                Return (Zero)
+                            }
+                        }
+                    }
+
                     Device (EC)
                     {
                         Name (_HID, "ACID0001")  // _HID: Hardware ID
@@ -266,32 +281,32 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "V-5401", 0x00000000)
                 }
             }
         }
-    }
 
-    Method (GPRW, 2, NotSerialized)
-    {
-        If (_OSI ("Darwin"))
+        Method (GPRW, 2, NotSerialized)
         {
-            If ((0x6D == Arg0))
+            If (_OSI ("Darwin"))
             {
-                Return (Package (0x02)
+                If ((0x6D == Arg0))
                 {
-                    0x6D, 
-                    Zero
-                })
+                    Return (Package (0x02)
+                    {
+                        0x6D, 
+                        Zero
+                    })
+                }
+
+                If ((0x0D == Arg0))
+                {
+                    Return (Package (0x02)
+                    {
+                        0x0D, 
+                        Zero
+                    })
+                }
             }
 
-            If ((0x0D == Arg0))
-            {
-                Return (Package (0x02)
-                {
-                    0x0D, 
-                    Zero
-                })
-            }
+            Return (XPRW (Arg0, Arg1))
         }
-
-        Return (XPRW (Arg0, Arg1))
     }
 }
 
