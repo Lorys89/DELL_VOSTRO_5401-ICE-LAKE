@@ -5,18 +5,18 @@
  * 
  * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of iASLgpEmkw.aml, Thu Jul  8 00:56:43 2021
+ * Disassembly of iASLbz8b6Q.aml, Tue Nov  2 09:45:09 2021
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x00000451 (1105)
+ *     Length           0x000003C3 (963)
  *     Revision         0x02
- *     Checksum         0x2B
+ *     Checksum         0xB7
  *     OEM ID           "DELL"
  *     OEM Table ID     "V-5401"
  *     OEM Revision     0x00000000 (0)
  *     Compiler ID      "INTL"
- *     Compiler Version 0x20200925 (538970405)
+ *     Compiler Version 0x20180427 (538444839)
  */
 DefinitionBlock ("", "SSDT", 2, "DELL", "V-5401", 0x00000000)
 {
@@ -29,8 +29,6 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "V-5401", 0x00000000)
     External (_SB_.PCI0.I2C1.TPD0, DeviceObj)
     External (_SB_.PCI0.LPCB, DeviceObj)
     External (_SB_.PCI0.LPCB.PS2K, DeviceObj)
-    External (_SB_.PCI0.LPCB.PS2M, DeviceObj)
-    External (_SB_.PCI0.LPCB.RTC_, DeviceObj)
     External (_SB_.PR00, ProcessorObj)
     External (HPTE, IntObj)
     External (STAS, IntObj)
@@ -187,46 +185,6 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "V-5401", 0x00000000)
                             If (_OSI ("Darwin"))
                             {
                                 Return (0x0B)
-                            }
-                            Else
-                            {
-                                Return (Zero)
-                            }
-                        }
-                    }
-
-                    Scope (RTC)
-                    {
-                        Method (_STA, 0, NotSerialized)  // _STA: Status
-                        {
-                            If (_OSI ("Darwin"))
-                            {
-                                Return (Zero)
-                            }
-                            Else
-                            {
-                                Return (0x0F)
-                            }
-                        }
-                    }
-
-                    Device (ARTC)
-                    {
-                        Name (_HID, EisaId ("PNP0B00") /* AT Real-Time Clock */)  // _HID: Hardware ID
-                        Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
-                        {
-                            IO (Decode16,
-                                0x0070,             // Range Minimum
-                                0x0070,             // Range Maximum
-                                0x01,               // Alignment
-                                0x02,               // Length
-                                )
-                        })
-                        Method (_STA, 0, NotSerialized)  // _STA: Status
-                        {
-                            If (_OSI ("Darwin"))
-                            {
-                                Return (0x0F)
                             }
                             Else
                             {
