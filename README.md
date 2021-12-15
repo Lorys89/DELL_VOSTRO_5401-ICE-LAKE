@@ -27,8 +27,8 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 | NVMe             | HYNIX BC511 512 GB (WINDOWS)       |
 | NVME             | SAMSUNG 970 EVO PLUS 500 GB (MACOS)|
 | SmBios           | MacBookPro 16,2                    |
-| BootLoader       | OpenCore 0.7.5                     |
-| macOS            | Monterey 12.0.1                    |
+| BootLoader       | OpenCore 0.7.6                     |
+| macOS            | Monterey 12.1                      |
 
 
 ![infomac](./Screenshot/infomac.png)
@@ -63,7 +63,7 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 - [x] ACPI Battery
 - [x] NVRAM (Native)
 - [x] Recovery (macOS) boot from OpenCore
-- [x] Windows 10 boot from OpenCore
+- [x] Windows 11 boot from OpenCore
 
 ## Peripherals & TouchPad Setting & Benchmarks
 
@@ -87,7 +87,6 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 
 - Usb port mapping performed
 - SSDT-Hack Essential patch
-- Applied cosmetics PCI Dev
 
 See [ioreg](./ioreg%20MacBook%20Pro%2016%2C2.ioreg) for more clarification
 
@@ -107,7 +106,6 @@ See [ioreg](./ioreg%20MacBook%20Pro%2016%2C2.ioreg) for more clarification
 ### Disable : 
 * Secure Boot
 * Absolute
-* TPM2.0 Security On
 * Intel SGX
 * SMM Security Migration
 * Wake on AC
