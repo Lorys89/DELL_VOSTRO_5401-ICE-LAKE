@@ -136,5 +136,5 @@ next to 00A5 and set from 02 to 03 then save with ctrl + w and to exit alt + q a
 ## Credits
 
 - [Apple](https://apple.com) for macOS.
-- [Acidanthera](https://github.com/acidanthera) for OpenCore and all the lovely hackintosh work.
+
 - [Acidanthera](https://github.com/acidanthera) for OpenCore and all the lovely hackintosh work.
