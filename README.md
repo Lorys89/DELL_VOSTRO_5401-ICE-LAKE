@@ -18,7 +18,7 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 | Lan              | Realtek 8168                       |
 | Audio            | Realtek ALC236                     |
 | Ram              | 32 GB DDR4 3200 Mhz                |
-| Wifi + Bluetooth | BCM943602BAED (DW1830)             |
+| Wifi + Bluetooth | Intel AX210 WIFI 6E                |
 | NVMe             | HYNIX BC511 512 GB (WINDOWS)       |
 | NVME             | SAMSUNG 970 EVO PLUS 500 GB (MACOS)|
 | SmBios           | MacBookPro 16,2                    |
@@ -37,7 +37,7 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 - [x] ALC236 Internal Speakers
 - [x] ALC236 Internal microphone
 - [x] ALC236 Combojack headphones
-- [ ] ALC236 Combojack microphone
+- [x] ALC236 Combojack microphone
 - [ ] ALC236 HDMI Audio Output (Not supported at the moment)
 - [ ] ALC236 TYPE-C to HDMI Audio Output (Not supported at the moment)
 - [x] All USB-A 3.1 Ports (TYPE-C 3.2 Included)
@@ -48,7 +48,7 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 - [x] F6 & F7 Brightness Key
 - [x] F10 Print Screen Key
 - [x] F1 & F2 & F3 Sound Key
-- [x] Wi-Fi and Bluetooth BCM943602BAED (DW1830) Module
+- [x] Wi-Fi and Bluetooth Intel AX200
 - [x] Realtek RTL8168 LAN
 - [x] SSD NVME Slot-1 PciE Gen3x4
 - [x] SSD NVME Slot-2 PciE Gen3x4 
@@ -64,12 +64,8 @@ EFI for Dell Vostro 5401 with OpenCore bootloader
 
 ![infohack](./Screenshot/periferiche.png)
 ![infodp2](./Screenshot/pci-list.png)
-![infopci](./Screenshot/pci-dev.png)
 ![Temp-Fan-Control](./Screenshot/Temp-Fan-Control.png)
 ![speedtest](./Screenshot/speedtest.png)
-![touchpad](./Screenshot/touchpad.png)
-![trascinamento](./Screenshot/trascinamento.png)
-![5finger](./Screenshot/fingermgmt.png)
 ![CPU](./Screenshot/CPU.png)
 ![openCL](./Screenshot/openCL.png)
 ![metal](./Screenshot/metal.png)
